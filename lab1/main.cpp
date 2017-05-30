@@ -8,7 +8,7 @@ using namespace std;
 int main(int argc, char* argv[])
 {
     string input,output,s,s_sub;
-
+    
     cout << "take me input file name: ";
     getline(cin,input);
     cout << "take me output file name: ";
