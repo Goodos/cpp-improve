@@ -7,7 +7,7 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-    string input,output,s,s_sub; // сюда будем класть считанные строки
+    string input,output,s,s_sub;
 
     cout << "take me input file name: ";
     getline(cin,input);
