@@ -7,7 +7,6 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-    //setlocale(LC_ALL, "Russian");
     string input,output,s,s_sub; // сюда будем класть считанные строки
 
     cout << "take me input file name: ";
