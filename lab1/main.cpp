@@ -8,7 +8,7 @@ using namespace std;
 int main(int argc, char* argv[])
 {
     string input,output,s,s_sub;
-    
+
     cout << "take me input file name: ";
     getline(cin,input);
     cout << "take me output file name: ";
@@ -29,9 +29,9 @@ int main(int argc, char* argv[])
                 s_sub += s + ' ';
         }
 
-        file_in.close(); // обязательно закрываем файл что бы не повредить его
+        file_in.close(); // закрываем файл что бы не повредить его
 
-        ofstream file_out ("D:\\" + output);
+        ofstream file_out ("D:\\" + output); // файл в который записываем
 
         if (!file_out.is_open())
             cout << "can't open file for write";
@@ -40,7 +40,8 @@ int main(int argc, char* argv[])
             file_out << s_sub << endl;
             file_out.close();
         }
-        cout << s_sub << endl; // выводим на экран
+        cout << "check " + output + " file" << endl; // выводим на экран
+        system("pause");
 
     }
 
