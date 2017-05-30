@@ -8,42 +8,40 @@ using namespace std;
 int main(int argc, char* argv[])
 {
     string input,output,s,s_sub;
-
+    int i = 0;
     cout << "take me input file name: ";
     getline(cin,input);
     cout << "take me output file name: ";
     getline(cin,output);
 
-    ifstream file_in("D:\\" + input); // файл из которого читаем
+    ifstream file_in("D:\\123\\" + input); // файл из которого читаем
+    ofstream file_out ("D:\\123\\" + output); // файл в который записываем
 
     if (!file_in)
-        cout << "can't open file for read";
-    else
+        return 1;
+
+    while(!file_in.eof())
     {
-        while(!file_in.eof())
-        {
-            file_in >> s;
-            if (s == "that" || s == "which")
-                s_sub += ',' + s + ' ';
-            else
-                s_sub += s + ' ';
+        file_in >> s;
+        if (i == 0) {
+            s_sub += s;
+            i++;
         }
-
-        file_in.close(); // закрываем файл что бы не повредить его
-
-        ofstream file_out ("D:\\" + output); // файл в который записываем
-
-        if (!file_out.is_open())
-            cout << "can't open file for write";
         else
         {
-            file_out << s_sub << endl;
-            file_out.close();
+            if (s == "that" || s == "which")
+                s_sub += ", " + s;
+            else
+                s_sub += ' ' + s;
         }
-        cout << "check " + output + " file" << endl; // выводим на экран
-        system("pause");
-
     }
+
+    file_out << s_sub << endl;
+
+    file_in.close(); // закрываем файл что бы не повредить его
+    file_out.close(); //
+
+    cout << "check " + output + " file" << endl; // выводим на экран
 
     return 0;
 }
